@@ -4,10 +4,12 @@ import { Route, Switch } from "react-router-dom";
 import AllMeetup from "./pages/AllMeetup";
 import NewAllMeetup from "./pages/NewmMeetup";
 import Favorites from "./pages/Favorites";
+import MainNavigation from "./components/layout/MainNavigation";
 
 function App() {
   return (
     <div>
+      <MainNavigation />
       <h1>Test</h1>
       <Todo text="할일" />
       <Switch>
