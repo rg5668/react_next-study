@@ -28,19 +28,32 @@ function AllMeetup() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadeMeetups, setLoadeMeetups] = useState([]);
 
-  fetch(
-    "https://react-getting-started-9f5df-default-rtdb.firebaseio.com/meetups.json"
-  )
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      // 데이터를 얻은 후 false
-      setIsLoading(false);
-      setLoadeMeetups(data);
-    });
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(
+      "https://react-getting-started-9f5df-default-rtdb.firebaseio.com/meetups.json"
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        // 데이터를 얻은 후 false
+        // firebase에서 배열이 아닌 객체로 들어와서 배열로 변형을 해줘야함.
+        const meetups = [];
 
-  useEffect(() => {}, []);
+        for (const key in data) {
+          const meetup = {
+            id: key,
+            ...data[key],
+          };
+
+          meetups.push(meetup);
+        }
+        setIsLoading(false);
+        setLoadeMeetups(meetups);
+        // console.log(meetups);
+      });
+  }, []);
 
   if (isLoading) {
     return (
