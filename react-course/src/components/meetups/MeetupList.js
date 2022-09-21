@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import MeetupItem from "./MeetupItem";
 import styles from "./MeetupList.module.css";
 

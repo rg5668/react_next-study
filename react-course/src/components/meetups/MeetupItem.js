@@ -20,15 +20,9 @@ function MeetupItem(props) {
         address: props.address,
       });
     }
-
-    // localStorage.setItem(props.id, [
-    //   props.id,
-    //   props.title,
-    //   props.description,
-    //   props.image,
-    //   props.address,
-    // ]);
   }
+
+  localStorage.setItem("favoritesCtx", JSON.stringify(favoritesCtx));
 
   return (
     <li className={styles.item}>
