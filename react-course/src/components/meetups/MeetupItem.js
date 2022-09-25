@@ -22,8 +22,6 @@ function MeetupItem(props) {
     }
   }
 
-  localStorage.setItem("favoritesCtx", JSON.stringify(favoritesCtx));
-
   return (
     <li className={styles.item}>
       <Card>

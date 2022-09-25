@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import MeetupList from "../components/meetups/MeetupList";
 
+/**
+ * all meetups에서 즐겨찾기 하고 myfavorites로 가서 로컬스토리지 데이터 정상적으로 저장 후 불러와지지만(새로고침해도)
+ * 1. 즐겨찾기에서 새로고침하면 버튼은 add로 바뀜
+ * 2. 이슈는 그 상대로 all meetups에 다시 들어가면 데이터 초기화
+ */
+
 // const DUMMY_DATA = [
 //   {
 //     id: "m1",

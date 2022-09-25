@@ -5,6 +5,7 @@ import styles from "./MainNavigation.module.css";
 
 function MainNavigation() {
   const favoritesCtx = useContext(FavoritesContext);
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>React Meetups</div>
