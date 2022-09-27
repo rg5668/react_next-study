@@ -6,7 +6,7 @@ function HomePage() {
 
   return (
     <div>
-      <EventList props={featuredEvents} />
+      <EventList itmes={featuredEvents} />
     </div>
   );
 }
