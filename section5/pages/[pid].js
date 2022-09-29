@@ -35,7 +35,6 @@ export async function getStaticProps(context) {
   const productId = params.pid;
 
   //코드 리팩토링 (중복 제거 하단 Path 에서도 쓸거임)
-
   // const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
   // //fs는 노드 모듈로 클라이언트측에서 보이지 않음 (렌더링 된 후 사라짐) 실 보여지는 코드만 보여짐
   // //데이터 읽어옴
