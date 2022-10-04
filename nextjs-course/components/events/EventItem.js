@@ -3,6 +3,7 @@ import ArrowRightIcon from "../icons/arrow-right-icon";
 import DateIcon from "../icons/date-icon";
 import Button from "../ui/Button";
 import classes from "./EventItem.module.css";
+import Image from "next/image";
 
 function EventItem(props) {
   const { title, image, date, location, id } = props;
@@ -16,7 +17,10 @@ function EventItem(props) {
 
   return (
     <li className={classes.item}>
-      <img src={"/" + image} alt={title} />
+      {/* Image 브라우저에 최적화되게 파일 사이즈를 줄여주고 확장자명을 바꿔준다. */}
+      {/* 또 반응형일경우 필요한 데이터만 로드(해당사이즈만)한다. 크기가 늘어나고 줄어들면 다시 불러온다. */}
+      <Image src={"/" + image} alt={title} width={350} height={160} />
+      {/* <img src={"/" + image} alt={title} /> */}
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{title}</h2>

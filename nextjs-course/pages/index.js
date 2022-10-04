@@ -1,3 +1,4 @@
+import Head from "next/head";
 import EventList from "../components/events/EventList";
 import { getFeaturedEvents } from "../helpers/api-utill";
 
@@ -6,6 +7,13 @@ function HomePage(props) {
 
   return (
     <div>
+      {/* head에 쉽게 추가 가능 */}
+      {/* 검색 엔진에 필요 */}
+      {/* <Head>
+        <title>NextJS Events</title>
+        <meta name="description" content="다양한 이벤트를 제공합니다." />
+      </Head> */}
+
       <EventList items={events} />
     </div>
   );
