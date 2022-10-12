@@ -1,5 +1,6 @@
 import Head from "next/head";
 import EventList from "../components/events/EventList";
+import NewsletterRegistration from "../components/Input/newsletter-registration";
 import { getFeaturedEvents } from "../helpers/api-utill";
 
 function HomePage(props) {
@@ -13,7 +14,7 @@ function HomePage(props) {
         <title>NextJS Events</title>
         <meta name="description" content="다양한 이벤트를 제공합니다." />
       </Head> */}
-
+      <NewsletterRegistration />
       <EventList items={events} />
     </div>
   );
