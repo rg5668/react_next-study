@@ -32,7 +32,7 @@ function Comments(props) {
       },
     })
       .then((response) => response.json())
-      .then((data) => console.log(data.comments));
+      .then((data) => console.log(data.comment));
   }
 
   return (
