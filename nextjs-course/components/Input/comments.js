@@ -13,7 +13,12 @@ function Comments(props) {
   useEffect(() => {
     if (showComments) {
       fetch(`/api/comments/${eventId}`)
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("400 or 500 error");
+          }
+          return response.json();
+        })
         .then((data) => setComments(data.comments));
     }
   }, [showComments]);
