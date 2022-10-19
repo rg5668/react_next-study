@@ -1,8 +1,18 @@
 import PostContent from "../../components/posts/post-detail/post-content";
 import { getPostData, getPostsFiles } from "../../lib/posts-util";
+import Head from "next/head";
+import { Fragment } from "react";
 
 const PostDetailPage = (props) => {
-  return <PostContent post={props.post} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>{props.post.title}</title>
+        <meta name="description" content={props.post.excerpt} />
+      </Head>
+      <PostContent post={props.post} />
+    </Fragment>
+  );
 };
 
 // getStaticProps를 동적으로 사용하기 위해 context를 사용하는데 미리 생성해야하는 slug를 위해 getStaticPaths를 사용해야한다.

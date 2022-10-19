@@ -1,27 +1,28 @@
-import ReactDOM from 'react-dom';
-
-import classes from './notification.module.css';
+import ReactDOM from "react-dom";
+import classes from "./notification.module.css";
 
 function Notification(props) {
   const { title, message, status } = props;
 
-  let statusClasses = '';
+  let statusClasses = "";
 
-  if (status === 'success') {
+  if (status === "success") {
     statusClasses = classes.success;
   }
 
-  if (status === 'error') {
+  if (status === "error") {
     statusClasses = classes.error;
   }
 
   const cssClasses = `${classes.notification} ${statusClasses}`;
 
-  return (
+  return ReactDOM.createPortal(
     <div className={cssClasses}>
       <h2>{title}</h2>
       <p>{message}</p>
-    </div>
+    </div>,
+    // 두번째 인자로 아이디 연결해줘야지 된다.
+    document.getElementById("notifications")
   );
 }
 
