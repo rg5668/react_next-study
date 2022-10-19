@@ -9,6 +9,10 @@
   padding: var(--size-4);
 }
 
+/* .content img {
+  max-width: 600px;
+} */
+
 .content p {
   color: var(--color-grey-800);
 }
