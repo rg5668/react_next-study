@@ -1,0 +1,10 @@
+{
+  "eslint.workingDirectories": [
+    "./nextjs-course",
+    "./nextjs-course-test",
+    "./react-course",
+    "./section5",
+    "./section8",
+    "./section10"
+  ]
+}
