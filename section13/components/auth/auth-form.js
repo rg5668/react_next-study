@@ -2,6 +2,7 @@ import { useState } from "react";
 import classes from "./auth-form.module.css";
 // [nextauth] 작성하고 api 호출할때 임포트(로그인)
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 
 async function createUser(email, password) {
   const response = await fetch("/api/auth/signup", {
@@ -26,6 +27,7 @@ function AuthForm() {
     email: "",
     password: "",
   });
+  const router = useRouter();
 
   function switchAuthModeHandler() {
     setIsLogin((prevState) => !prevState);
@@ -53,6 +55,10 @@ function AuthForm() {
         password: userData.password,
       });
       console.log(result);
+
+      if (!result.error) {
+        router.replace("/profile");
+      }
     } else {
       //회원가입
       try {
