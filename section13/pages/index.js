@@ -1,7 +1,12 @@
 import StartingPageContent from "../components/starting-page/starting-page";
-
+import SingArea from "../components/common/SignArea";
 function HomePage() {
-  return <StartingPageContent />;
+  return (
+    <>
+      <SingArea />
+      <StartingPageContent />
+    </>
+  );
 }
 
 export default HomePage;
